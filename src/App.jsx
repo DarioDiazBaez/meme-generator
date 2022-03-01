@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import html2canvas from 'html2canvas';
 
+const imagenes = require.context('./img',true)
+
 function App() {
 
   const [linea1, setLinea1] = useState("");
@@ -57,7 +59,7 @@ function App() {
       </div>
       <div className="meme col-12 col-md-6" id="meme" >
         <div className="card bg-dark text-white">
-          <img src={`/img/${imagen}.jpg`} className="card-img img-fluid" alt="meme"/>
+          <img src={imagenes(`./${imagen}.jpg`)} className="card-img img-fluid" alt="meme"/>
           <div className="card-img-overlay">
             <br/><br/>
             <h2 className="fs-1 text-light card-text">{linea1}</h2>
